@@ -3,3 +3,78 @@
     margin: 0;
     padding: 0;
 }
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 600px;
+    margin: auto;
+}
+
+.logo{
+    width: 250px;
+    margin: auto;
+    padding: 10px;
+}
+
+.logo img{
+    width: 100%;
+}
+
+.newTask{
+    text-align: center;
+}
+
+.newTaskInput{
+    display: flex;
+    justify-content: center;
+}
+
+.newTask input,
+.newTask button{
+    padding: 8px 16px;
+    border-radius: 0.5rem;
+    border: 1px solid grey;
+    font-size: 0.8;
+    margin: 10px 5px;
+}
+
+.newTask input{
+    flex-grow: 0.1;    
+}
+
+.error{
+    color: red;
+    margin-bottom: 10px;
+}
+
+.nothing-to-do{
+    text-align: center;
+}
+
+
+.tasks_container{
+    width: 400px;
+    margin: auto;
+    background-color: #F5F7F7;
+    border-radius: 0.6rem;
+    padding: 40px 20px 20px;
+
+}
+
+.tasks .item{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgrey;
+    padding: 8px 10px;
+}
+
+.tasks .item:hover{
+    background-color: lightgrey;
+}
+
+.tasks .item .delete-task:hover{
+    cursor: pointer;
+}
+

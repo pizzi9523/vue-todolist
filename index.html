@@ -14,19 +14,32 @@
 
 <body>
     <div id="root">
-        <div class="newTask">
-            <input type="text" v-model="newTask" @keyup.enter="addNewTask">
-            <button @click="addNewTask">Add</button>
-            <div v-if="error == true" class="error">Devi inserire una task almeno 5 caratteri</div>
-        </div>
-
-        <div class="tasks" v-if="tasks.length > 0">
-            <div v-for="(task, index) in tasks" class="item">
-                {{task}}
-                <div @click="deleteTask(index)" class="delete-task"><i class="fas fa-times"></i></div>
+        <div class="container">
+            <div class="logo">
+                <img :src="logoImg" alt="">
             </div>
+            <div class="newTask">
+                <div class="newTaskInput">
+                    <input type="text" placeholder="Nuovo Todo" v-model="newTask" @keyup.enter="addNewTask">
+                    <button @click="addNewTask">Aggiungi</button>
+                </div>
+                <div v-if="error == true" class="error">Devi inserire una task almeno 5 caratteri</div>
+
+            </div>
+
+
+            <div class="tasks_container">
+                <div class="tasks" v-if="tasks.length > 0">
+                    <div v-for="(task, index) in tasks" class="item">
+                        {{task}}
+                        <div @click="deleteTask(index)" class="delete-task"><i class="fas fa-times"></i></div>
+                    </div>
+                </div>
+                <div class="nothing-to-do" v-else>Nothing to do Today! <i class="far fa-smile"></i></div>
+            </div>
+
+
         </div>
-        <div v-else>Nothing to do Today! :)</div>
 
     </div>
 
