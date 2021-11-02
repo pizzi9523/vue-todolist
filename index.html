@@ -20,12 +20,13 @@
             <div v-if="error == true" class="error">Devi inserire una task almeno 5 caratteri</div>
         </div>
 
-        <div class="tasks">
+        <div class="tasks" v-if="tasks.length > 0">
             <div v-for="(task, index) in tasks" class="item">
                 {{task}}
                 <div @click="deleteTask(index)" class="delete-task"><i class="fas fa-times"></i></div>
             </div>
         </div>
+        <div v-else>Nothing to do Today! :)</div>
 
     </div>
 
