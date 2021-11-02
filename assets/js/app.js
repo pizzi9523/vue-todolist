@@ -7,5 +7,10 @@ const app = new Vue({
             "Fare il bucato"
         ]
 
+    },
+    methods: {
+        deleteTask(index) {
+            this.tasks.splice(index, 1)
+        }
     }
 })

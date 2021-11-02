@@ -15,7 +15,10 @@
 <body>
     <div id="root">
         <div class="tasks">
-            <div v-for="task in tasks" class="item">{{task}}</div>
+            <div v-for="(task, index) in tasks" class="item">
+                {{task}}
+                <div @click="deleteTask(index)" class="delete-task"><i class="fas fa-times"></i></div>
+            </div>
         </div>
 
     </div>
