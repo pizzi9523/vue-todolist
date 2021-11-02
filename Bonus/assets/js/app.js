@@ -34,14 +34,21 @@ const app = new Vue({
         },
 
         modifyTask(index) {
-            console.log(this.tasks[index]);
+            console.log(index);
             let modifica = prompt("Modifica la tua task")
             this.tasks.splice(index, 1, modifica)
         },
 
-        addTaskCompleted(task) {
+        addTaskCompleted(task, index) {
             this.tasksComplete.push(task)
-            this.deleteTask()
+            this.tasks.splice(index, 1);
+        },
+
+        undoComplete(task, index) {
+            console.log(this.tasks);
+            this.tasks.push(task)
+            this.tasksComplete.splice(index, 1);
+
         }
     }
 })

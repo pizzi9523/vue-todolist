@@ -33,10 +33,10 @@
                     <h2 class="tasks-to-do-title">To Do List</h2>
                     <div class="tasks" v-if="tasks.length > 0">
                         <div v-for="(task, index) in tasks" class="item">
-                            <div class="item-text" @click="modifyTask">{{task}}</div>
+                            <div class="item-text" @click="modifyTask(index)">{{task}}</div>
 
                             <div class="task-command">
-                                <span @click="addTaskCompleted(task)" class="done-task">
+                                <span @click="addTaskCompleted(task, index)" class="done-task">
                                     <i class="fas fa-check-circle"></i>
                                 </span>
 
@@ -53,11 +53,11 @@
 
                 <div class="tasks-container tasks-completed" v-if="tasksComplete.length > 0 ">
                     <h2 class="tasks-completed-title">Completed</h2>
-                    <div v-for="task in tasksComplete" class="item completed">
+                    <div v-for="(task, index) in tasksComplete" class="item completed">
                         <div class="item-text">{{task}}</div>
 
                         <div class="task-command">
-                            <span @click="" class="undo">
+                            <span @click="undoComplete(task,index)" class="undo">
                                 <i class="fas fa-undo"></i>
                             </span>
                         </div>
