@@ -1,6 +1,7 @@
 const app = new Vue({
     el: "#root",
     data: {
+        logoImg: "https://www.boolean.careers/images/misc/logo.png",
         newTask: "",
         error: false,
         tasks: [
@@ -23,7 +24,7 @@ const app = new Vue({
                 this.tasks.push(this.newTask);
                 this.error = false;
             } else {
-                console.log("error");
+                // console.log("error");
                 this.error = true;
             }
             this.newTask = "";
