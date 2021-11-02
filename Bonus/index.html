@@ -40,7 +40,7 @@
                                     <i class="fas fa-check-circle"></i>
                                 </span>
 
-                                <span @click="deleteTask(index)" class="delete-task">
+                                <span @click="deleteTask(task, index)" class="delete-task">
                                     <i class="fas fa-times"></i>
                                 </span>
 
@@ -62,7 +62,23 @@
                             </span>
                         </div>
                     </div>
+                </div>
 
+                <div class="tasks-container tasks-trashed" v-if="tasksTrashed.length > 0 ">
+                    <h2 class="tasks-trashed-title">
+                        Trashed
+                        <i class="fas fa-trash"></i>
+                        (<span class="permanently-delete" @click="permanentlyDelete">Empty bin</span>)
+                    </h2>
+                    <div v-for="(task, index) in tasksTrashed" class="item thrashed">
+                        <div class="item-text">{{task}}</div>
+
+                        <div class="task-command">
+                            <span @click="restoreTrashed(task, index)" class="trash-restore">
+                                <i class="fas fa-trash-restore"></i>
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </section>
 

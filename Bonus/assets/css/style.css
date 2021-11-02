@@ -81,7 +81,7 @@ h2{
     padding: 8px 10px;
 }
 
-.tasks .item:hover{
+.item:hover{
     background-color: lightgrey;
 }
 .delete-task{
@@ -89,8 +89,19 @@ h2{
 }
 .item .delete-task:hover,
 .item .done-task:hover,
-.item .undo:hover{
+.item .undo:hover,
+.item .trash-restore:hover{
     cursor: pointer;
+}
+
+.permanently-delete{
+    color: red;
+}
+
+.permanently-delete:hover{
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .tasks-container.tasks-completed{
