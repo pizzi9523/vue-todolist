@@ -67,7 +67,7 @@ const app = new Vue({
         },
 
         permanentlyDelete() {
-            let verifyChoice = prompt("Sei sicuro di eliminare definitivamente? [s/n]");
+            let verifyChoice = prompt("Sei sicuro di voler eliminare definitivamente? [s/n]");
 
             if (verifyChoice == "s") {
                 this.tasksTrashed.splice(0, this.tasksTrashed.length);
