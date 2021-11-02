@@ -36,29 +36,33 @@ const app = new Vue({
 
         modifyTask(index) {
             console.log(index);
-            let modifica = prompt("Modifica la tua task")
-            this.tasks.splice(index, 1, modifica)
+            let modifica = prompt("Modifica la tua task. (Minimo 5 caratteri)");
+            if (modifica.length > 5) {
+                this.tasks.splice(index, 1, modifica);
+            } else {
+                alert("Devi inserire minimo 5 caratteri")
+            }
         },
 
         deleteTask(task, index) {
             //this.tasks.splice(index, 1);
-            this.tasksTrashed.push(task)
+            this.tasksTrashed.push(task);
             this.tasks.splice(index, 1);
         },
 
         addTaskCompleted(task, index) {
-            this.tasksComplete.push(task)
+            this.tasksComplete.push(task);
             this.tasks.splice(index, 1);
         },
 
         undoComplete(task, index) {
             //console.log(this.tasks);
-            this.tasks.push(task)
+            this.tasks.push(task);
             this.tasksComplete.splice(index, 1);
         },
 
         restoreTrashed(task, index) {
-            this.tasks.push(task)
+            this.tasks.push(task);
             this.tasksTrashed.splice(index, 1);
         },
 
@@ -66,7 +70,7 @@ const app = new Vue({
             let verifyChoice = prompt("Sei sicuro di eliminare definitivamente? [s/n]");
 
             if (verifyChoice == "s") {
-                this.tasksTrashed.splice(0, this.tasksTrashed.length)
+                this.tasksTrashed.splice(0, this.tasksTrashed.length);
             }
         }
     }

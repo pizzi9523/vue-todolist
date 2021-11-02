@@ -90,7 +90,8 @@ h2{
 .item .delete-task:hover,
 .item .done-task:hover,
 .item .undo:hover,
-.item .trash-restore:hover{
+.item .trash-restore:hover,
+.tasks-to-do .item-text:hover{
     cursor: pointer;
 }
 
@@ -104,7 +105,8 @@ h2{
     text-decoration: underline;
 }
 
-.tasks-container.tasks-completed{
+.tasks-container.tasks-completed,
+.tasks-container.tasks-trashed{
     flex-grow: 1;
 }
 
