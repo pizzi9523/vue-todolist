@@ -14,6 +14,12 @@
 
 <body>
     <div id="root">
+        <div class="newTask">
+            <input type="text" v-model="newTask" @keyup.enter="addNewTask">
+            <button @click="addNewTask">Add</button>
+            <div v-if="error == true" class="error">Devi inserire una task almeno 5 caratteri</div>
+        </div>
+
         <div class="tasks">
             <div v-for="(task, index) in tasks" class="item">
                 {{task}}
